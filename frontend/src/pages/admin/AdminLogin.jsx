@@ -34,7 +34,11 @@ export default function AdminLogin() {
       toast.success(`Hoş geldiniz, ${data.username}!`)
       navigate('/admin/dashboard', { replace: true })
     } catch (err) {
-      const msg = err.response?.data?.message || 'Kullanıcı adı veya şifre hatalı.'
+      const status = err.response?.status
+      const msg =
+        status === 404
+          ? 'API adresi bulunamadı. Canlı ortam VITE_API_URL ayarını kontrol edin.'
+          : err.response?.data?.message || 'Kullanıcı adı veya şifre hatalı.'
       setError(msg)
     } finally {
       setLoading(false)
