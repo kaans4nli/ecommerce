@@ -60,6 +60,10 @@ DB_PASSWORD=postgres
 JWT_SECRET=your-super-secret-jwt-key-must-be-at-least-32-chars-for-security!
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=admin123
+
+CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
+CLOUDINARY_API_KEY=your-cloudinary-api-key
+CLOUDINARY_API_SECRET=your-cloudinary-api-secret
 ```
 
 ### Backend Setup
@@ -183,8 +187,8 @@ npm run lint -- --fix
 - Check CORS settings in `app.cors.allowed-origins`
 
 ### File Upload Issues
-- Ensure `uploads/` directory exists and has write permissions
-- Check `UPLOAD_DIR` configuration
+- Ensure Cloudinary credentials are configured
+- Check `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`
 
 ## Project Structure
 
