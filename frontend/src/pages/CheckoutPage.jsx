@@ -127,7 +127,7 @@ export default function CheckoutPage() {
 
             <button
               onClick={handleInstagramProfile}
-              className="w-full py-4 flex items-center justify-center gap-3 
+              className="w-full py-4 px-4 flex items-center justify-center gap-3 
                          bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500
                          text-white text-sm font-semibold tracking-wide
                          hover:opacity-90 transition-opacity active:scale-95"

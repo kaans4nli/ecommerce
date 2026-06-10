@@ -75,7 +75,7 @@ export default function FavoritesPage() {
                   {product.name}
                 </h3>
               </Link>
-              <div className="flex items-end justify-between gap-3">
+              <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3">
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="font-semibold text-stone-900">
@@ -95,13 +95,7 @@ export default function FavoritesPage() {
                     addItem(product)
                     toast.success('Sepete eklendi')
                   }}
-                  className="
-                    text-xs font-semibold uppercase tracking-wide
-                    px-3 py-2
-                    bg-stone-900 text-white
-                    hover:bg-amber-500 hover:text-stone-900
-                    transition-all
-                  "
+                  className="sm:w-auto w-full text-xs font-semibold uppercase tracking-wide px-3 py-2 bg-stone-900 text-white hover:bg-amber-500 hover:text-stone-900 transition-all"
                 >
                   Sepete Ekle
                 </button>

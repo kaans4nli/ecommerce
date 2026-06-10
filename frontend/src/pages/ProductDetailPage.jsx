@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ShoppingBag, Heart, ChevronLeft, ChevronRight } from 'lucide-react'
 import { productApi } from '../api/products'
@@ -12,6 +12,8 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const touchStartX = useRef(0)
+  const touchCurrentX = useRef(0)
 
   const addItem = useCartStore(s => s.addItem)
   const { toggle, isFavorite } = useFavoriteStore()
@@ -47,6 +49,24 @@ export default function ProductDetailPage() {
     setCurrentImageIndex((i) => (i - 1 + images.length) % images.length)
   }
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e) => {
+    touchCurrentX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    const dx = touchStartX.current - touchCurrentX.current
+    if (Math.abs(dx) > 50) {
+      if (dx > 0) nextImage()
+      else prevImage()
+    }
+    touchStartX.current = 0
+    touchCurrentX.current = 0
+  }
+
   const discount = product?.originalPrice && product.originalPrice > product.price
     ? Math.round((1 - product.price / product.originalPrice) * 100)
     : null
@@ -79,7 +99,7 @@ export default function ProductDetailPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
         {/* Image Gallery */}
-        <div className="relative group">
+        <div className="relative group" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <img
             src={images[currentImageIndex]}
             alt={product.name}

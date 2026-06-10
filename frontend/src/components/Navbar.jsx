@@ -123,9 +123,15 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden border-t border-stone-100 bg-white animate-fade-in">
-            <nav className="container-custom py-4 flex flex-col gap-4">
+            <nav className="container-custom py-4 flex flex-col gap-3">
               <Link to="/" className="text-sm font-medium text-stone-700 py-2 border-b border-stone-50">
                 Koleksiyon
+              </Link>
+              <Link to="/?featured=true" className="text-sm font-medium text-stone-700 py-2 border-b border-stone-50">
+                Öne Çıkanlar
+              </Link>
+              <Link to="/?discounted=true" className="text-sm font-medium text-stone-700 py-2 border-b border-stone-50">
+                İndirim
               </Link>
               <Link to="/favorites" className="text-sm font-medium text-stone-700 py-2 border-b border-stone-50 flex justify-between">
                 Favoriler {favCount > 0 && <span className="text-amber-600">{favCount}</span>}
