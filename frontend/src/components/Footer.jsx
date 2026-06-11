@@ -60,10 +60,6 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-stone-400">
-                <Mail size={15} />
-                <span>info@yucesoy.com</span>
-              </li>
-              <li className="flex items-center gap-2 text-sm text-stone-400">
                 <MapPin size={15} />
                 <span>Havran, Balıkesir, Türkiye</span>
               </li>
