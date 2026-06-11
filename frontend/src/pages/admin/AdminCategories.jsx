@@ -101,13 +101,14 @@ export default function AdminCategories() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <h1 className="text-3xl font-bold text-stone-900">Kategori Yönetimi</h1>
         <button
           onClick={() => handleOpenModal()}
-          className="flex items-center gap-2 bg-amber-500 text-stone-900 px-4 py-2 font-semibold hover:bg-amber-400 transition-colors"
+          className="flex items-center justify-center gap-2 bg-amber-500 text-stone-900 px-4 py-2 font-semibold hover:bg-amber-400 transition-colors w-full sm:w-auto text-sm sm:text-base"
         >
-          <Plus size={20} /> Yeni Kategori
+          <Plus size={20} /> <span className="hidden sm:inline">Yeni Kategori</span>
+          <span className="sm:hidden">Ekle</span>
         </button>
       </div>
 
@@ -125,7 +126,7 @@ export default function AdminCategories() {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((category) => (
             <div key={category.id} className="bg-white border border-stone-200 overflow-hidden hover:shadow-md transition-shadow">
               {/* Image */}

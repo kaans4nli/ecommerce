@@ -293,26 +293,26 @@ export default function AdminProducts() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-stone-900">
             Ürün Yönetimi
           </h1>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Ürün ara..."
-            className="w-72 px-4 py-2 border border-stone-300 focus:border-amber-500 focus:outline-none"
+            className="flex-1 sm:w-64 px-4 py-2 border border-stone-300 focus:border-amber-500 focus:outline-none"
           />
 
           {search && (
             <button
               onClick={() => setSearch('')}
-              className="px-3 py-2 bg-stone-200 hover:bg-stone-300"
+              className="px-3 py-2 bg-stone-200 hover:bg-stone-300 text-sm font-medium"
             >
               Temizle
             </button>
@@ -320,10 +320,11 @@ export default function AdminProducts() {
 
           <button
             onClick={() => handleOpenModal()}
-            className="flex items-center gap-2 bg-amber-500 text-stone-900 px-4 py-2 font-semibold hover:bg-amber-400 transition-colors"
+            className="flex items-center justify-center gap-2 bg-amber-500 text-stone-900 px-4 py-2 font-semibold hover:bg-amber-400 transition-colors text-sm sm:text-base whitespace-nowrap"
           >
             <Plus size={20} />
-            Yeni Ürün
+            <span className="hidden sm:inline">Yeni Ürün</span>
+            <span className="sm:hidden">Ekle</span>
           </button>
         </div>
       </div>

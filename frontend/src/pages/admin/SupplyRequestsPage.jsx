@@ -133,7 +133,7 @@ export default function SupplyRequestsPage() {
                 </button>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
 
                 {/* CREATE FORM */}
                 <div className="bg-white border border-stone-200 p-6 space-y-4">
@@ -201,8 +201,8 @@ export default function SupplyRequestsPage() {
                     </div>
 
                     {/* Quantity + Add */}
-                    <div className="flex gap-2 items-end">
-                        <div>
+                    <div className="flex flex-col sm:flex-row gap-2 sm:items-end">
+                        <div className="flex-1 sm:flex-none">
                             <label className="block text-sm font-medium text-stone-900 mb-1">
                                 Adet
                             </label>
@@ -210,14 +210,14 @@ export default function SupplyRequestsPage() {
                                 type="number"
                                 value={quantity}
                                 onChange={(e) => setQuantity(Number(e.target.value))}
-                                className="input-field w-24"
+                                className="input-field w-full sm:w-24"
                                 min={1}
                             />
                         </div>
 
                         <button
                             onClick={addItem}
-                            className="h-10 px-4 bg-amber-500 text-stone-900 font-semibold hover:bg-amber-400 transition-colors"
+                            className="h-10 px-4 bg-amber-500 text-stone-900 font-semibold hover:bg-amber-400 transition-colors text-sm sm:text-base"
                         >
                             Ekle
                         </button>
