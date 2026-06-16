@@ -101,9 +101,10 @@ export default function ProductDetailPage() {
         {/* Image Gallery */}
         <div className="relative group" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
           <img
+            key={currentImageIndex}
             src={images[currentImageIndex]}
             alt={product.name}
-            className="w-full aspect-[3/4] object-cover"
+            className="w-full aspect-[3/4] object-cover animate-fade-in"
           />
           {discount && (
             <span className="absolute top-4 left-4 badge-sale text-sm px-3 py-1.5">
@@ -133,7 +134,7 @@ export default function ProductDetailPage() {
                   <button
                     key={i}
                     onClick={() => setCurrentImageIndex(i)}
-                    className={`w-2 h-2 rounded-full transition-colors ${i === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
                       }`}
                   />
                 ))}
