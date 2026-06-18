@@ -61,15 +61,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-stone-400">
                 <MapPin size={15} />
-                <span>Havran, Balıkesir, Türkiye</span>
-              </li>
-              <li className="flex items-center gap-2 text-sm text-stone-400">
-                <MapPin size={15} />
-                <span>Akçay, Balıkesir, Türkiye</span>
-              </li>
-              <li className="flex items-center gap-2 text-sm text-stone-400">
-                <MapPin size={15} />
-                <span>Edremit Kipa AVM, Balıkesir, Türkiye</span>
+                <span>İstanbul, Türkiye</span>
               </li>
             </ul>
           </div>
