@@ -51,7 +51,7 @@ export default function AdminLogin() {
         {/* Logo */}
         <div className="text-center mb-10">
           <h1 className="font-display text-4xl font-bold text-white tracking-widest mb-2">
-            YUCESOY
+            ŞANLI
           </h1>
           <p className="text-stone-500 text-sm tracking-widest uppercase">Admin Panel</p>
         </div>

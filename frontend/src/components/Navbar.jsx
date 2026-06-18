@@ -40,7 +40,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="font-display text-2xl font-bold tracking-widest text-stone-900">
-              YUCESOY
+              ŞANLI
             </Link>
 
             {/* Desktop Nav */}

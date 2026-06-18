@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Mail, MapPin } from 'lucide-react'
 import { FaInstagram } from "react-icons/fa"
 
-const INSTAGRAM_USERNAME = import.meta.env.INSTAGRAM_USERNAME || 'yucesoy_canta_ve_taki_dunyasi'
+const INSTAGRAM_USERNAME = import.meta.env.INSTAGRAM_USERNAME || 'sanlitaki'
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-white tracking-widest mb-4">YUCESOY</h3>
+            <h3 className="font-display text-2xl font-bold text-white tracking-widest mb-4">ŞANLI</h3>
             <p className="text-sm leading-relaxed text-stone-400 max-w-xs">
               Kalite ve sadeliği bir araya getiren modern bir mağaza deneyimi.
             </p>
@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className="border-t border-stone-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-stone-500">
-            © {new Date().getFullYear()} YUCESOY. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} ŞANLI. Tüm hakları saklıdır.
           </p>
         </div>
       </div>

@@ -26,7 +26,7 @@ export default function AdminLayout() {
   const Sidebar = () => (
     <div className="flex flex-col h-full bg-stone-900 text-white">
       <div className="p-6 border-b border-stone-800">
-        <Link to="/" className="font-display text-xl font-bold tracking-widest">YUCESOY</Link>
+        <Link to="/" className="font-display text-xl font-bold tracking-widest">ŞANLI</Link>
         <p className="text-xs text-stone-500 mt-1">Admin Paneli</p>
       </div>
 

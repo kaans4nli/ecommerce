@@ -6,7 +6,7 @@ import { useCartStore } from '../store/cartStore'
 import EmptyState from '../components/EmptyState'
 import toast from 'react-hot-toast'
 
-const INSTAGRAM_USERNAME = import.meta.env.INSTAGRAM_USERNAME || 'yucesoy_canta_ve_taki_dunyasi'
+const INSTAGRAM_USERNAME = import.meta.env.INSTAGRAM_USERNAME || 'sanlitaki'
 
 export default function CheckoutPage() {
   const { items, getTotalPrice, getOrderMessage, clearCart } = useCartStore()
