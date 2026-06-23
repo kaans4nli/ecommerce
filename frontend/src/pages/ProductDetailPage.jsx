@@ -5,6 +5,7 @@ import { productApi } from '../api/products'
 import { useCartStore } from '../store/cartStore'
 import { useFavoriteStore } from '../store/favoriteStore'
 import { getImageList, getImage } from '../utils/image'
+import ImagePreview from '../components/ImagePreview'
 import toast from 'react-hot-toast'
 
 export default function ProductDetailPage() {
@@ -12,6 +13,7 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [previewOpen, setPreviewOpen] = useState(false)
   const touchStartX = useRef(0)
   const touchCurrentX = useRef(0)
 
@@ -104,7 +106,8 @@ export default function ProductDetailPage() {
             key={currentImageIndex}
             src={images[currentImageIndex]}
             alt={product.name}
-            className="w-full aspect-[3/4] object-cover animate-fade-in"
+            className="w-full aspect-[3/4] object-cover animate-fade-in cursor-pointer hover:opacity-90 transition-opacity"
+            onClick={() => setPreviewOpen(true)}
           />
           {discount && (
             <span className="absolute top-4 left-4 badge-sale text-sm px-3 py-1.5">
@@ -207,6 +210,14 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </div>
+
+      {previewOpen && (
+        <ImagePreview
+          images={images}
+          initialIndex={currentImageIndex}
+          onClose={() => setPreviewOpen(false)}
+        />
+      )}
     </div>
   )
 }

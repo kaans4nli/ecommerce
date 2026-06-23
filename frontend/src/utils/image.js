@@ -1,5 +1,5 @@
 const PLACEHOLDER =
-  'https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800'
+  'https://placehold.co/800x800/f8fafc/94a3b8?text=No+Image+Available&font=roboto'
 
 const API_BASE =
   import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:8080'
