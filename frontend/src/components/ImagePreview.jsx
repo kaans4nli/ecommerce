@@ -51,22 +51,22 @@ export default function ImagePreview({ images, initialIndex, onClose }) {
   }
 
   return (
-    <div
-      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
+    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors"
+        className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors z-10"
       >
         <X size={24} />
       </button>
 
       {/* Main Image */}
-      <div className="relative w-full h-full flex items-center justify-center px-4">
+      <div
+        className="relative w-full h-full flex items-center justify-center px-4"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <img
           src={images[currentIndex]}
           alt="Preview"
