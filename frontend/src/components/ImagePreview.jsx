@@ -31,10 +31,12 @@ export default function ImagePreview({ images, initialIndex, onClose }) {
   }
 
   const handleTouchStart = (e) => {
+    if (e.target.closest('button')) return
     touchStartX.current = e.touches[0].clientX
   }
 
   const handleTouchMove = (e) => {
+    if (e.target.closest('button')) return
     touchCurrentX.current = e.touches[0].clientX
   }
 
