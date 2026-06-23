@@ -64,8 +64,6 @@ export default function ProductDetailPage() {
     if (Math.abs(dx) > 50) {
       if (dx > 0) nextImage()
       else prevImage()
-    } else {
-      setPreviewOpen(true)
     }
     touchStartX.current = 0
     touchCurrentX.current = 0
