@@ -17,12 +17,21 @@ public class CloudinaryService {
 
     public String uploadFile(MultipartFile file) throws IOException {
 
+        if (file.isEmpty()) {
+            throw new IOException("Cannot upload empty file");
+        }
+
         Map uploadResult = cloudinary.uploader().upload(
                 file.getBytes(),
                 ObjectUtils.emptyMap()
         );
 
-        return uploadResult.get("secure_url").toString();
+        Object secureUrl = uploadResult.get("secure_url");
+        if (secureUrl == null) {
+            throw new IOException("Cloudinary upload failed: secure_url not found in response");
+        }
+
+        return secureUrl.toString();
     }
 
     public void deleteFile(String imageUrl) throws IOException {
@@ -37,13 +46,18 @@ public class CloudinaryService {
 
     private String extractPublicId(String imageUrl) {
 
+        if (imageUrl == null || imageUrl.isEmpty()) {
+            throw new IllegalArgumentException("Image URL cannot be null or empty");
+        }
+
         String[] parts = imageUrl.split("/");
-
         String fileName = parts[parts.length - 1];
+        int dotIndex = fileName.lastIndexOf(".");
 
-        return fileName.substring(
-                0,
-                fileName.lastIndexOf(".")
-        );
+        if (dotIndex <= 0) {
+            throw new IllegalArgumentException("Invalid image URL format: " + imageUrl);
+        }
+
+        return fileName.substring(0, dotIndex);
     }
 }
