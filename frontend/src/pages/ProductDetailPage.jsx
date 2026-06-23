@@ -52,7 +52,9 @@ export default function ProductDetailPage() {
   }
 
   const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX
+    const x = e.touches[0].clientX
+    touchStartX.current = x
+    touchCurrentX.current = x
   }
 
   const handleTouchMove = (e) => {
@@ -64,6 +66,8 @@ export default function ProductDetailPage() {
     if (Math.abs(dx) > 50) {
       if (dx > 0) nextImage()
       else prevImage()
+    } else if (Math.abs(dx) <= 10) {
+      setPreviewOpen(true)
     }
     touchStartX.current = 0
     touchCurrentX.current = 0
