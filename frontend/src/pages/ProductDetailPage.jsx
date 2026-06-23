@@ -217,9 +217,6 @@ export default function ProductDetailPage() {
             <p className="text-xs text-stone-400">
               📦 Sipariş için Instagram üzerinden iletişime geçin
             </p>
-            <p className="text-xs text-stone-400">
-              ↩️ İade ve değişim için 14 gün süreniz var
-            </p>
           </div>
         </div>
       </div>
