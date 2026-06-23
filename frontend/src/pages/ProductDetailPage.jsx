@@ -185,7 +185,7 @@ export default function ProductDetailPage() {
 
           {/* Description */}
           {product.description && (
-            <p className="text-stone-500 text-sm leading-relaxed mb-8">
+            <p className="text-stone-500 text-sm leading-relaxed mb-8 whitespace-pre-wrap">
               {product.description}
             </p>
           )}
