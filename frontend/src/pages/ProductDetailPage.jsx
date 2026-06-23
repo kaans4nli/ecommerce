@@ -66,8 +66,6 @@ export default function ProductDetailPage() {
     if (Math.abs(dx) > 50) {
       if (dx > 0) nextImage()
       else prevImage()
-    } else if (Math.abs(dx) <= 10) {
-      setPreviewOpen(true)
     }
     touchStartX.current = 0
     touchCurrentX.current = 0
@@ -118,6 +116,17 @@ export default function ProductDetailPage() {
               -{discount}% İndirim
             </span>
           )}
+
+          {/* Mobile Preview Button */}
+          <button
+            onClick={() => setPreviewOpen(true)}
+            className="absolute top-4 right-4 md:hidden bg-white/90 hover:bg-white text-stone-900 p-2.5 rounded-full transition-all shadow-lg"
+            title="Büyütüp Görüntüle"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" />
+            </svg>
+          </button>
 
           {/* Image Navigation */}
           {images.length > 1 && (
